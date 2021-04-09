@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Courses - SmileSchool</title>
+    <meta name="description" content="Build a web app in JavaScript">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Coiny&display=swap" rel="stylesheet">
+    <!-- jQuery and bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- styles and behaviour -->
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+  </head>
+  <body>
+    <!-- Skip links -->
+    <nav aria-label="Skip links">
+      <ul class="off-screen">
+        <li><a href="#a11y-primary-nav" class="skip-link">Skip to primary navigation</a></li>
+      </ul>
+    </nav>
+    <!-- Header -->
+    <header class="container-fluid courses-header-bg text-white">
+      <div class="container-md">
+        <nav class="navbar navbar-expand-sm pt-4 px-0" id="a11y-primary-nav" tabindex="-1">
+          <div class="container-fluid px-0">
+            <button type="button" class="navbar-toggler p-0 m-0" data-toggle="collapse" data-target="#navbarMenu"
+                aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-menu-icon text-white"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+              <img src="assets/images/smile_off.png" class="align-top mr-3" alt="Smile logo" width="40" height="30">
+              <img src="assets/images/logo.png" class="align-top" alt="SmileSchool logo" width="162" height="32">
+            </a>
+            <div class="collapse navbar-collapse" id="navbarMenu">
+              <ul class="nav navbar-nav ml-auto font-weight-bold">
+                <li class="nav-item pl-4">
+                  <a href="#" class="nav-link text-uppercase text-center text-purple active-effect">courses</a>
+                </li>
+                <li class="nav-item pl-4">
+                  <a href="#" class="nav-link text-uppercase text-center text-white">pricing</a>
+                </li>
+                <li class="nav-item pl-4">
+                  <a href="#" class="nav-link text-uppercase text-center text-white">login</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+      <!-- Hero section -->
+      <section class="section-hero hero-homepage pt-2 d-none d-sm-block">
+        <div class="container pt-5">
+          <div class="section-body py-4">
+            <div class="section-inner-first-part mb-5 d-flex align-items-center justify-content-center">
+              <h1 class="d-none d-sm-block section-title course-header-title smileschool-font">«Don't cry because it's over. <br><span class="text-purple font-weight-bold">Smile</span> because it happened.»</h1>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <main id="a11y-main-content" tabindex="-1">
+      <!-- Search filters section -->
+      <section class="search-filters bg-purple">
+        <div class="container-lg">
+          <div class="text-white row row-cols-1 row-cols-md-2 row-cols-lg-3 py-4">
+            <div class="col-lg-4 col-md-12 col-sm-12">
+              <label for="searchKeyword"><small class="font-weight-bold text-uppercase">Keywords</small></label>
+              <div class="input-group mb-3 border-left-0 border-right-0 border-top-0">
+                <div class="input-group-prepend border-left-0 border-right-0 border-top-0">
+                  <span class="input-group-text border-left-0 border-right-0 border-top-0 py-0" id="search-icon"></span>
+                </div>
+                <input type="text" class="form-control border-left-0 border-right-0 border-top-0 filter-search search-input" id="searchKeyword" placeholder="Search by keywords" aria-label="Search" aria-describedby="search-icon">
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <label for="dropdownTopic"><small class="font-weight-bold text-uppercase">Topic</small></label>
+              <div class="custom-select dropdown p-0 filter-search border-left-0 border-right-0 border-top-0">
+                <a class="h-100 text-white d-flex align-items-center justify-content-between topic-filter px-3" href="#" role="button" id="dropdownTopic" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Novice
+                  <span class="topic-sp align-items-end"></span>
+                </a>
+                <span class=""></span>
+                <span class="dropdown-icon"></span>
+                <div class="dropdown-menu w-100" aria-labelledby="dropdownTopic">
+                  <a class="dropdown-item" href="#">Novice</a>
+                  <a class="dropdown-item" href="#">Intermediate</a>
+                  <a class="dropdown-item" href="#">Expert</a>
+                </div>
+                
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6">
+              <label for="inputSortby"><small class="font-weight-bold text-uppercase">Sort by</small></label>
+              <div class="custom-select dropdown p-0 filter-search border-left-0 border-right-0 border-top-0">
+                <a class="h-100 text-white d-flex align-items-center justify-content-between sortby-filter px-3" href="#" role="button" id="dropdownSortby" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Most popular
+                  <span class="sort-sp"></span>
+                </a>
+                <span class="dropdown-icon"></span>
+                <div class="dropdown-menu w-100" aria-labelledby="dropdownSortby">
+                  <a class="dropdown-item" href="#">Most popular</a>
+                  <a class="dropdown-item" href="#">Most recent</a>
+                  <a class="dropdown-item" href="#">Most viewed</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- list results section -->
+      <section class="list_results">
+        <div class="container pt-3 pb-4">
+          <div class="section-header d-flex align-items-center justify-content-start pt-3 py-5">
+            <header class="section-header">
+              <span class="videos-quantity">11 videos</span>
+            </header>
+          </div>
+          <div class="section-body">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_4.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Diagonal Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_3.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Sad Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_1.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Natural Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_2.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Happy Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_4.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Diagonal Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_3.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Sad Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_1.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Natural Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_2.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Happy Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_4.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Diagonal Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_3.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Sad Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+              <div class="col card py-3 border-0">
+                <img src="assets/images/thumbnail_1.jpg" class="card-img-top" alt="Diagonal smile">
+                <div class="card-img-overlay d-flex flex-row align-items-start justify-content-center mt-3">
+                  <img src="assets/images/play.png" alt="Diagonal smile" width="65" height="65" class="">
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title font-weight-bold">Natural Smile</h5>
+                  <small class="card-text text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</small>
+                </div>
+                <div class="mx-4 mb-2">
+                  <img src="assets/images/profile_1.jpg" alt="Phillip Massey" width="30" height="30" class="rounded-circle mr-2">
+                  <span class="text-purple font-weight-bold">Phillip Massey</span>
+                </div>
+                <div class="mx-4 d-flex flex-row justify-content-center justify-content-between">
+                  <div>
+                    <img src="assets/images/star_on.png" alt="Star on 1" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 2" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 3" width="15" height="15" class="">
+                    <img src="assets/images/star_on.png" alt="Star on 4" width="15" height="15" class="">
+                    <img src="assets/images/star_off.png" alt="Star on 5" width="15" height="15" class="">
+                  </div>
+                  <span class="text-purple font-weight-bold">8 min</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer section -->
+    <footer class="footer bg-blue pt-5">
+      <div class="container py-5">
+        <div class="row row-cols-1 row-cols-sm-2 pb-3">
+          <div class="col d-flex flex-row align-items-sm-center justify-content-sm-start align-items-center justify-content-center mb-4 mb-sm-0">
+            <img src="assets/images/smile_off.png" class="mr-2" alt="SmileSchool logo" width="40" height="30">
+            <img src="assets/images/logo.png" class="ml-2" alt="SmileSchool logo" width="162" height="32">
+          </div>
+          <div class="col d-flex flex-column align-items-sm-end justify-content-sm-center align-items-center justify-content-center">
+            <ul class="social nav">
+              <li class="social-item nav-item m-2">
+                <a href="#" class="social-link facebook" aria-label="Facebook"></a>
+              </li>
+              <li class="social-item nav-item m-2">
+                <a href="#" class="social-link twitter" aria-label="Twitter"></a>
+              </li>
+              <li class="social-item nav-item m-2">
+                <a href="#" class="social-link instagram" aria-label="Instagram"></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright-content d-flex flex-column align-items-center justify-content-center">
+          <div class="">
+            <small class="footer-copyright text-muted">© smileschool 2020</small>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
